@@ -1,0 +1,121 @@
+transaction_id,amount,event_type,classified_reason,confidence,action_taken,explanation,recovered,amount_recovered
+TXN1001,11162.02,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1002,1441.04,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,True,1441.04
+TXN1003,8484.49,failed_payment,network_error,high,retry_immediately,Transient technical failure; safe to retry right away.,False,0.0
+TXN1004,10517.37,subscription_failed,bank_timeout,high,retry_immediately,Transient technical failure; safe to retry right away.,True,10517.37
+TXN1005,5791.92,failed_payment,network_error,high,retry_immediately,Transient technical failure; safe to retry right away.,True,5791.92
+TXN1006,8112.99,failed_payment,card_expired,high,notify_customer_update_card,"Card is expired; retrying won't help, so we ask the customer to update it.",False,0.0
+TXN1007,8723.68,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,True,8723.68
+TXN1008,12851.47,failed_payment,issuer_declined,high,escalate_to_human,"Bank declined the payment; automatic retries risk more declines, so a human should review.",False,0.0
+TXN1009,5425.77,failed_payment,insufficient_funds,high,retry_in_48h,Funds often replenish within 1-2 days (e.g. salary credit); scheduled a delayed retry.,True,5425.77
+TXN1010,2576.53,failed_payment,network_error,high,retry_immediately,Transient technical failure; safe to retry right away.,True,2576.53
+TXN1011,3551.36,failed_payment,issuer_declined,high,escalate_to_human,"Bank declined the payment; automatic retries risk more declines, so a human should review.",True,3551.36
+TXN1012,13164.06,failed_payment,issuer_declined,high,escalate_to_human,"Bank declined the payment; automatic retries risk more declines, so a human should review.",True,13164.06
+TXN1013,2271.64,subscription_failed,network_error,high,retry_immediately,Transient technical failure; safe to retry right away.,True,2271.64
+TXN1014,13482.67,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1015,1500.0,failed_payment,bank_timeout,high,retry_immediately,Transient technical failure; safe to retry right away.,True,1500.0
+TXN1016,9006.67,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1017,12932.58,failed_payment,insufficient_funds,high,retry_in_48h,Funds often replenish within 1-2 days (e.g. salary credit); scheduled a delayed retry.,False,0.0
+TXN1018,11563.69,failed_payment,issuer_declined,high,escalate_to_human,"Bank declined the payment; automatic retries risk more declines, so a human should review.",False,0.0
+TXN1019,14582.54,failed_payment,card_expired,high,notify_customer_update_card,"Card is expired; retrying won't help, so we ask the customer to update it.",False,0.0
+TXN1020,2419.66,failed_payment,insufficient_funds,high,retry_in_48h,Funds often replenish within 1-2 days (e.g. salary credit); scheduled a delayed retry.,True,2419.66
+TXN1021,13947.11,failed_payment,bank_timeout,high,retry_immediately,Transient technical failure; safe to retry right away.,False,0.0
+TXN1022,11018.83,subscription_failed,bank_timeout,high,retry_immediately,Transient technical failure; safe to retry right away.,True,11018.83
+TXN1023,2602.14,failed_payment,network_error,high,retry_immediately,Transient technical failure; safe to retry right away.,False,0.0
+TXN1024,6075.04,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1025,5170.57,failed_payment,insufficient_funds,high,retry_in_48h,Funds often replenish within 1-2 days (e.g. salary credit); scheduled a delayed retry.,True,5170.57
+TXN1026,1150.89,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,True,1150.89
+TXN1027,3331.42,failed_payment,network_error,high,retry_immediately,Transient technical failure; safe to retry right away.,True,3331.42
+TXN1028,2977.59,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1029,10149.46,failed_payment,card_expired,high,notify_customer_update_card,"Card is expired; retrying won't help, so we ask the customer to update it.",True,10149.46
+TXN1030,2974.6,failed_payment,bank_timeout,high,retry_immediately,Transient technical failure; safe to retry right away.,False,0.0
+TXN1031,6730.49,failed_payment,network_error,high,retry_immediately,Transient technical failure; safe to retry right away.,False,0.0
+TXN1032,2619.72,subscription_failed,issuer_declined,high,escalate_to_human,"Bank declined the payment; automatic retries risk more declines, so a human should review.",False,0.0
+TXN1033,14781.84,failed_payment,card_expired,high,notify_customer_update_card,"Card is expired; retrying won't help, so we ask the customer to update it.",False,0.0
+TXN1034,9978.79,subscription_failed,card_expired,high,notify_customer_update_card,"Card is expired; retrying won't help, so we ask the customer to update it.",True,9978.79
+TXN1035,1055.22,failed_payment,network_error,high,retry_immediately,Transient technical failure; safe to retry right away.,True,1055.22
+TXN1036,2487.88,subscription_failed,insufficient_funds,high,retry_in_48h,Funds often replenish within 1-2 days (e.g. salary credit); scheduled a delayed retry.,True,2487.88
+TXN1037,6146.07,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1038,8543.62,failed_payment,bank_timeout,high,retry_immediately,Transient technical failure; safe to retry right away.,True,8543.62
+TXN1039,6027.42,failed_payment,issuer_declined,low,escalate_to_human,Failure reason unclear; routed to human review instead of guessing.,False,0.0
+TXN1040,14942.03,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1041,13230.83,failed_payment,bank_timeout,high,retry_immediately,Transient technical failure; safe to retry right away.,True,13230.83
+TXN1042,9233.41,failed_payment,card_expired,high,notify_customer_update_card,"Card is expired; retrying won't help, so we ask the customer to update it.",False,0.0
+TXN1043,4077.32,failed_payment,bank_timeout,high,retry_immediately,Transient technical failure; safe to retry right away.,False,0.0
+TXN1044,3173.42,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1045,1520.63,subscription_failed,issuer_declined,low,escalate_to_human,Failure reason unclear; routed to human review instead of guessing.,False,0.0
+TXN1046,2549.49,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1047,14184.01,failed_payment,card_expired,high,notify_customer_update_card,"Card is expired; retrying won't help, so we ask the customer to update it.",False,0.0
+TXN1048,771.16,failed_payment,card_expired,high,notify_customer_update_card,"Card is expired; retrying won't help, so we ask the customer to update it.",False,0.0
+TXN1049,5402.13,failed_payment,bank_timeout,high,retry_immediately,Transient technical failure; safe to retry right away.,False,0.0
+TXN1050,14646.66,failed_payment,insufficient_funds,high,retry_in_48h,Funds often replenish within 1-2 days (e.g. salary credit); scheduled a delayed retry.,True,14646.66
+TXN1051,12063.19,subscription_failed,insufficient_funds,high,retry_in_48h,Funds often replenish within 1-2 days (e.g. salary credit); scheduled a delayed retry.,False,0.0
+TXN1052,3453.14,failed_payment,bank_timeout,high,retry_immediately,Transient technical failure; safe to retry right away.,True,3453.14
+TXN1053,5024.69,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1054,5067.58,failed_payment,bank_timeout,high,retry_immediately,Transient technical failure; safe to retry right away.,False,0.0
+TXN1055,1759.78,subscription_failed,card_expired,high,notify_customer_update_card,"Card is expired; retrying won't help, so we ask the customer to update it.",True,1759.78
+TXN1056,5870.15,subscription_failed,issuer_declined,low,escalate_to_human,Failure reason unclear; routed to human review instead of guessing.,False,0.0
+TXN1057,10349.83,subscription_failed,insufficient_funds,high,retry_in_48h,Funds often replenish within 1-2 days (e.g. salary credit); scheduled a delayed retry.,True,10349.83
+TXN1058,10001.3,subscription_failed,network_error,high,retry_immediately,Transient technical failure; safe to retry right away.,False,0.0
+TXN1059,10503.54,failed_payment,issuer_declined,high,escalate_to_human,"Bank declined the payment; automatic retries risk more declines, so a human should review.",False,0.0
+TXN1060,4619.11,subscription_failed,bank_timeout,high,retry_immediately,Transient technical failure; safe to retry right away.,False,0.0
+TXN1061,7055.07,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1062,9933.93,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1063,10141.02,failed_payment,issuer_declined,low,escalate_to_human,Failure reason unclear; routed to human review instead of guessing.,False,0.0
+TXN1064,9227.42,failed_payment,network_error,high,retry_immediately,Transient technical failure; safe to retry right away.,False,0.0
+TXN1065,6084.85,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1066,11709.54,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1067,13774.43,failed_payment,issuer_declined,high,escalate_to_human,"Bank declined the payment; automatic retries risk more declines, so a human should review.",False,0.0
+TXN1068,14258.09,subscription_failed,network_error,high,retry_immediately,Transient technical failure; safe to retry right away.,False,0.0
+TXN1069,13473.54,subscription_failed,bank_timeout,high,retry_immediately,Transient technical failure; safe to retry right away.,True,13473.54
+TXN1070,7346.27,failed_payment,insufficient_funds,high,retry_in_48h,Funds often replenish within 1-2 days (e.g. salary credit); scheduled a delayed retry.,False,0.0
+TXN1071,4897.69,failed_payment,bank_timeout,high,retry_immediately,Transient technical failure; safe to retry right away.,True,4897.69
+TXN1072,1103.8,failed_payment,issuer_declined,high,escalate_to_human,"Bank declined the payment; automatic retries risk more declines, so a human should review.",False,0.0
+TXN1073,5933.73,failed_payment,issuer_declined,high,escalate_to_human,"Bank declined the payment; automatic retries risk more declines, so a human should review.",False,0.0
+TXN1074,11339.11,subscription_failed,network_error,high,retry_immediately,Transient technical failure; safe to retry right away.,False,0.0
+TXN1075,3408.41,subscription_failed,issuer_declined,high,escalate_to_human,"Bank declined the payment; automatic retries risk more declines, so a human should review.",False,0.0
+TXN1076,10904.09,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1077,8939.61,failed_payment,issuer_declined,high,escalate_to_human,"Bank declined the payment; automatic retries risk more declines, so a human should review.",False,0.0
+TXN1078,4013.32,failed_payment,card_expired,high,notify_customer_update_card,"Card is expired; retrying won't help, so we ask the customer to update it.",False,0.0
+TXN1079,11317.35,subscription_failed,issuer_declined,low,escalate_to_human,Failure reason unclear; routed to human review instead of guessing.,True,11317.35
+TXN1080,3479.7,failed_payment,insufficient_funds,high,retry_in_48h,Funds often replenish within 1-2 days (e.g. salary credit); scheduled a delayed retry.,False,0.0
+TXN1081,12612.55,subscription_failed,issuer_declined,high,escalate_to_human,"Bank declined the payment; automatic retries risk more declines, so a human should review.",False,0.0
+TXN1082,7055.75,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,True,7055.75
+TXN1083,11700.21,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,True,11700.21
+TXN1084,8700.58,failed_payment,bank_timeout,high,retry_immediately,Transient technical failure; safe to retry right away.,False,0.0
+TXN1085,1663.23,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,True,1663.23
+TXN1086,11772.13,failed_payment,card_expired,high,notify_customer_update_card,"Card is expired; retrying won't help, so we ask the customer to update it.",True,11772.13
+TXN1087,12766.2,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1088,10653.53,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1089,11653.43,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,True,11653.43
+TXN1090,12486.36,failed_payment,bank_timeout,high,retry_immediately,Transient technical failure; safe to retry right away.,True,12486.36
+TXN1091,5145.49,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1092,5204.03,failed_payment,network_error,high,retry_immediately,Transient technical failure; safe to retry right away.,False,0.0
+TXN1093,7405.38,failed_payment,issuer_declined,high,escalate_to_human,"Bank declined the payment; automatic retries risk more declines, so a human should review.",False,0.0
+TXN1094,3440.71,failed_payment,network_error,high,retry_immediately,Transient technical failure; safe to retry right away.,False,0.0
+TXN1095,6468.73,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1096,1941.74,failed_payment,network_error,high,retry_immediately,Transient technical failure; safe to retry right away.,True,1941.74
+TXN1097,3363.31,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1098,14710.58,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1099,2029.76,failed_payment,card_expired,high,notify_customer_update_card,"Card is expired; retrying won't help, so we ask the customer to update it.",False,0.0
+TXN1100,1673.43,failed_payment,issuer_declined,high,escalate_to_human,"Bank declined the payment; automatic retries risk more declines, so a human should review.",False,0.0
+TXN1101,3899.3,failed_payment,issuer_declined,high,escalate_to_human,"Bank declined the payment; automatic retries risk more declines, so a human should review.",False,0.0
+TXN1102,2403.15,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1103,11669.05,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1104,4684.9,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1105,4079.99,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1106,6216.49,failed_payment,bank_timeout,high,retry_immediately,Transient technical failure; safe to retry right away.,True,6216.49
+TXN1107,1207.02,failed_payment,network_error,high,retry_immediately,Transient technical failure; safe to retry right away.,True,1207.02
+TXN1108,1854.43,subscription_failed,card_expired,high,notify_customer_update_card,"Card is expired; retrying won't help, so we ask the customer to update it.",False,0.0
+TXN1109,11920.53,failed_payment,issuer_declined,high,escalate_to_human,"Bank declined the payment; automatic retries risk more declines, so a human should review.",False,0.0
+TXN1110,7582.01,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1111,9115.15,subscription_failed,network_error,high,retry_immediately,Transient technical failure; safe to retry right away.,False,0.0
+TXN1112,8707.27,failed_payment,issuer_declined,high,escalate_to_human,"Bank declined the payment; automatic retries risk more declines, so a human should review.",False,0.0
+TXN1113,6622.89,failed_payment,card_expired,high,notify_customer_update_card,"Card is expired; retrying won't help, so we ask the customer to update it.",False,0.0
+TXN1114,12887.34,failed_payment,issuer_declined,high,escalate_to_human,"Bank declined the payment; automatic retries risk more declines, so a human should review.",False,0.0
+TXN1115,694.95,subscription_failed,card_expired,high,notify_customer_update_card,"Card is expired; retrying won't help, so we ask the customer to update it.",False,0.0
+TXN1116,12400.17,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,True,12400.17
+TXN1117,5522.42,failed_payment,insufficient_funds,high,retry_in_48h,Funds often replenish within 1-2 days (e.g. salary credit); scheduled a delayed retry.,False,0.0
+TXN1118,6656.02,failed_payment,network_error,high,retry_immediately,Transient technical failure; safe to retry right away.,False,0.0
+TXN1119,8329.96,checkout_abandoned,abandoned,high,send_checkout_reminder,Customer left without paying; a gentle reminder often recovers the sale.,False,0.0
+TXN1120,14213.85,subscription_failed,card_expired,high,notify_customer_update_card,"Card is expired; retrying won't help, so we ask the customer to update it.",False,0.0
