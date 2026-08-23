@@ -1,1 +1,4 @@
-# no external dependencies - standard library only
+# Core pipeline uses only the standard library.
+# Optional, only needed for the AI-based ambiguous-case classifier:
+anthropic
+matplotlib

@@ -8,26 +8,31 @@ For every failed payment or abandoned checkout, this decides:
 Every decision is written down (audited), so nothing happens silently.
 """
 
+from llm_classifier import classify_with_ai
+
 MAX_RETRIES = 3
 
 
 def classify(record):
     """
     STEP 2a: Work out the failure reason.
-    Most records already have a clear reason from the data.
-    If it's missing, we make a careful guess instead of blindly retrying.
+    Most records already have a clear reason from the data -- these use
+    fast, cheap rule-based logic.
+    Only genuinely AMBIGUOUS cases (blank/unknown reason) are sent to an
+    AI model for a careful judgment call. This is "the right tool in the
+    right place": no AI needed for clear cases, AI used where it adds value.
     """
     reason = record.get("failure_reason", "").strip()
 
     if reason:
         return reason, "high"  # confidence: high, because reason is known
 
-    # missing reason -> fall back to a safe guess based on amount + method
     if record["event_type"] == "checkout_abandoned":
         return "abandoned", "high"
 
-    # unknown failure reason: guess "issuer_declined" (safest, most conservative)
-    return "issuer_declined", "low"
+    # ambiguous case: reason is missing -> use AI to make a careful guess
+    reason, confidence = classify_with_ai(record)
+    return reason, confidence
 
 
 def decide_action(record, reason, confidence):
