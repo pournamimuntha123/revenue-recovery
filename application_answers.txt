@@ -1,0 +1,12 @@
+   The first issue I hit was a crash while calculating total recovered amount.
+   Data loaded from CSV comes in as text, and I was trying to add up amount
+   fields without converting them to numbers first. I fixed it by explicitly
+   converting each amount to a float when building the audit entry.
+
+   The second challenge was making sure the system wouldn't act recklessly on
+   unclear cases. I built a stress test with deliberately tricky records — a
+   customer who'd already been retried 5 times, and payments with no failure
+   reason at all — to confirm my stopping rules would catch these and escalate
+   to a human instead of guessing or retrying endlessly. All 5 edge cases
+   passed, which gave me confidence the system is genuinely bounded, not just
+   working by luck on clean data.

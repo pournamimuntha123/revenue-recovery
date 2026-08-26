@@ -34,58 +34,78 @@ failed payment / abandoned checkout
 
 ```bash
 pip install -r requirements.txt   # (no external dependencies needed, standard library only)
-python3 generate_data.py          # creates data.csv (120 synthetic transactions)
+python3 generate\_data.py          # creates data.csv (120 synthetic transactions)
 python3 main.py                   # runs the full pipeline and prints the report
 ```
 
 Output:
-- Console report with headline numbers
-- `audit_log.csv` — full decision trail for every transaction
+
+* Console report with headline numbers
+* `audit\_log.csv` — full decision trail for every transaction
 
 ## Results (on this synthetic batch)
 
-| Metric | Value |
-|---|---|
-| Total transactions | 120 |
-| Total amount at risk | Rs 891,229 |
-| Total amount recovered | Rs 261,495 |
-| Recovery rate | 29.34% |
-| Escalated to human | 19.17% |
+|Metric|Value|
+|-|-|
+|Total transactions|120|
+|Total amount at risk|Rs 891,229|
+|Total amount recovered|Rs 261,495|
+|Recovery rate|29.34%|
+|Escalated to human|19.17%|
 
 *(Recovery outcomes are simulated with assumed success rates per action, since
 this uses synthetic data rather than live Razorpay transactions. See
-`simulate_outcomes.py` for the assumed rates.)*
+`simulate\_outcomes.py` for the assumed rates.)*
 
 ## Stopping rules (the "bounded" part)
 
-- Max 3 retries per transaction, then automatic escalation to a human
-- Low-confidence classifications never trigger an automatic retry — they go
-  straight to human review instead of guessing
-- Every action is logged with a plain-English reason, so nothing happens silently
+* Max 3 retries per transaction, then automatic escalation to a human
+* Low-confidence classifications never trigger an automatic retry — they go
+straight to human review instead of guessing
+* Every action is logged with a plain-English reason, so nothing happens silently
 
 ## What broke, and how it was fixed
 
 The pipeline initially crashed while computing total recovered amount. Data
 loaded from CSV comes in as text, and the amount field wasn't converted to a
 number before being summed, causing a `TypeError`. Fixed by explicitly
-converting `record["amount"]` to `float()` when building each audit entry.
+converting `record\["amount"]` to `float()` when building each audit entry.
 This is a good example of why every stage should validate its inputs instead
 of assuming the previous stage's output is the right type.
 
+
+
+&#x20;  ## AI usage
+
+
+
+&#x20;  Most cases use fast rule-based classification, since the failure reason is
+
+&#x20;  already known. Only genuinely ambiguous cases (missing/unclear failure
+
+&#x20;  reason) are sent to an AI model (Claude) for a careful judgment call. This
+
+&#x20;  keeps the system fast and cheap for clear cases, and uses AI only where it
+
+&#x20;  adds real value — not everywhere.
+
+
+
 ## Known limitations
 
-- Recovery outcomes are simulated, not real — a production version would call
-  Razorpay's actual retry/notification APIs and measure real outcomes
-- Classification is rule-based for known failure reasons; an LLM-based
-  classifier could handle messier, unstructured failure messages better
-- Compliance rules (e.g. DND preferences, opt-outs) are simplified here and
-  would need real regulatory input for production use
+* Recovery outcomes are simulated, not real — a production version would call
+Razorpay's actual retry/notification APIs and measure real outcomes
+* Classification is rule-based for known failure reasons; an LLM-based
+classifier could handle messier, unstructured failure messages better
+* Compliance rules (e.g. DND preferences, opt-outs) are simplified here and
+would need real regulatory input for production use
 
 ## Files
 
-- `generate_data.py` — creates synthetic transaction data
-- `recovery_engine.py` — classification + decision + stopping rules
-- `simulate_outcomes.py` — simulates outcomes and computes metrics
-- `main.py` — runs everything end-to-end
-- `data.csv` — generated input data
-- `audit_log.csv` — generated output (full decision trail)
+* `generate\_data.py` — creates synthetic transaction data
+* `recovery\_engine.py` — classification + decision + stopping rules
+* `simulate\_outcomes.py` — simulates outcomes and computes metrics
+* `main.py` — runs everything end-to-end
+* `data.csv` — generated input data
+* `audit\_log.csv` — generated output (full decision trail)
+
