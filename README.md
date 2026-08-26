@@ -34,14 +34,14 @@ failed payment / abandoned checkout
 
 ```bash
 pip install -r requirements.txt   # (no external dependencies needed, standard library only)
-python3 generate\_data.py          # creates data.csv (120 synthetic transactions)
+python3 generate\\\_data.py          # creates data.csv (120 synthetic transactions)
 python3 main.py                   # runs the full pipeline and prints the report
 ```
 
 Output:
 
 * Console report with headline numbers
-* `audit\_log.csv` — full decision trail for every transaction
+* `audit\\\_log.csv` — full decision trail for every transaction
 
 ## Results (on this synthetic batch)
 
@@ -55,7 +55,7 @@ Output:
 
 *(Recovery outcomes are simulated with assumed success rates per action, since
 this uses synthetic data rather than live Razorpay transactions. See
-`simulate\_outcomes.py` for the assumed rates.)*
+`simulate\\\_outcomes.py` for the assumed rates.)*
 
 ## Stopping rules (the "bounded" part)
 
@@ -69,7 +69,7 @@ straight to human review instead of guessing
 The pipeline initially crashed while computing total recovered amount. Data
 loaded from CSV comes in as text, and the amount field wasn't converted to a
 number before being summed, causing a `TypeError`. Fixed by explicitly
-converting `record\["amount"]` to `float()` when building each audit entry.
+converting `record\\\["amount"]` to `float()` when building each audit entry.
 This is a good example of why every stage should validate its inputs instead
 of assuming the previous stage's output is the right type.
 
@@ -91,6 +91,38 @@ of assuming the previous stage's output is the right type.
 
 
 
+\## Real API integration (designed, not fully activated)
+
+
+
+The system is designed to integrate with Razorpay's Payment Links API via
+
+`razorpay\_integration.py`, generating real recovery payment links for
+
+customers. Full activation requires Razorpay test-mode API keys, which
+
+require account KYC including bank verification — this repo demonstrates
+
+the integration code path with simulated outcomes, and switches to real
+
+API calls automatically once keys are configured.
+
+
+
+\## Dashboard
+
+
+
+Run `streamlit run dashboard.py` for an interactive view of results,
+
+including metric cards, charts by action type and failure reason, and a
+
+filterable transaction-level table.
+
+
+
+
+
 ## Known limitations
 
 * Recovery outcomes are simulated, not real — a production version would call
@@ -102,10 +134,10 @@ would need real regulatory input for production use
 
 ## Files
 
-* `generate\_data.py` — creates synthetic transaction data
-* `recovery\_engine.py` — classification + decision + stopping rules
-* `simulate\_outcomes.py` — simulates outcomes and computes metrics
+* `generate\\\_data.py` — creates synthetic transaction data
+* `recovery\\\_engine.py` — classification + decision + stopping rules
+* `simulate\\\_outcomes.py` — simulates outcomes and computes metrics
 * `main.py` — runs everything end-to-end
 * `data.csv` — generated input data
-* `audit\_log.csv` — generated output (full decision trail)
+* `audit\\\_log.csv` — generated output (full decision trail)
 
