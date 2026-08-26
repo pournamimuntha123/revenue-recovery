@@ -2,3 +2,8 @@
 # Optional, only needed for the AI-based ambiguous-case classifier:
 anthropic
 matplotlib
+# Optional, only needed for real Razorpay test-mode API calls:
+razorpay
+# Optional, only needed for the visual dashboard:
+streamlit
+pandas

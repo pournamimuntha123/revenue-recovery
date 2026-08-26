@@ -1,0 +1,20 @@
+1. PROBLEM (30 sec)
+- Failed payments and abandoned checkouts are a silent revenue leak for merchants
+- Most of them are recoverable if you retry at the right time or nudge the customer correctly
+
+2. HOW IT WORKS (60 sec)
+- Flow: event happens -> system classifies why -> decides the right action -> applies safety stopping rules -> logs everything
+- Clear cases use fast rule-based logic; only unclear cases get sent to an AI model for judgment
+
+3. LIVE DEMO (2 min)
+- Run py main.py on screen, show the report
+- Point at recovery rate % and total amount recovered
+- Open audit_log.csv, show TXN1006 (expired card, correctly did not retry) and TXN1008 (bank declined, correctly escalated to a human)
+
+4. WHAT BROKE (60 sec)
+- Hit a crash converting CSV text into numbers, fixed by converting amount fields to float
+- Built a stress test with tricky edge cases (5 retries already, missing reason) to prove the safety rules actually hold, not just look good on clean data
+
+5. WHAT'S NEXT (30 sec)
+- Connect to real Razorpay APIs instead of simulated outcomes
+- Expand AI classification to handle more ambiguous cases
